@@ -168,6 +168,9 @@ static void init_ui(void) {
 
 static void handle_window_unload(Window* window) {
   destroy_ui();
+  gbitmap_destroy(s_res_cameraicon);
+  gbitmap_destroy(s_res_bursticon);
+  gbitmap_destroy(s_res_timelapseicon);
 }
 
 void show_window(void) {

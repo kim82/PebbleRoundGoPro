@@ -5,12 +5,13 @@
 // Keys for AppMessage Dictionary
 enum {
 	STATUS_KEY = 0,	
-	MESSAGE_KEY = 1,
+	MESSAGE = 1,
   MODE = 2,
   CURRENT = 3,
   REMAIN = 4,
 	BATTERY = 5,
 	RECORDING = 6,
+  POWER = 7
 };
 static bool initialized = false;
 static int mode = -1;
@@ -35,14 +36,15 @@ int tupleInt(DictionaryIterator *received, int dict) {
 // Called when a message is received from PebbleKitJS
 static void in_received_handler(DictionaryIterator *received, void *context) {
   bool ok = false;
+  int status = 0;
   Tuple *tuple;
   
 	tuple = dict_find(received, STATUS_KEY);
 	if(tuple) {
-    ok = ((int)tuple->value->uint32) == 1;
+    status = (int)tuple->value->uint32;
 		//APP_LOG(APP_LOG_LEVEL_DEBUG, "Received Status: %d", (int)tuple->value->uint32); 
 	}
-	if (ok) {
+	if (status == 1) {
     /*
   	tuple = dict_find(received, MESSAGE_KEY);
   	if(tuple) {
@@ -54,7 +56,9 @@ static void in_received_handler(DictionaryIterator *received, void *context) {
       hide_loadscreen();
       show_window();
     }
-    
+    if (tupleInt(received, RECORDING) == 1) {
+      vibes_double_pulse();
+    }
     mode = tupleInt(received, MODE);
     setMode(mode, tupleInt(received, RECORDING));
     setBattery(tupleInt(received, BATTERY));
@@ -66,6 +70,7 @@ static void in_received_handler(DictionaryIterator *received, void *context) {
       hide_window();
       show_loadscreen();
     }
+    set_loadText(status);
   }
 }
 

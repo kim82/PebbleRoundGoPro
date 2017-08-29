@@ -1,0 +1,91 @@
+{
+    "author": "Kim T. Pham",
+    "dependencies": {},
+    "keywords": [],
+    "name": "gopro",
+    "pebble": {
+        "displayName": "GoPro Remote",
+        "enableMultiJS": true,
+        "messageKeys": {
+            "battery": 5,
+            "current": 3,
+            "message": 1,
+            "mode": 2,
+            "power": 7,
+            "recording": 6,
+            "remain": 4,
+            "status": 0
+        },
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/gopro.png",
+                    "menuIcon": true,
+                    "name": "appicon",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/timelapse.png",
+                    "name": "timelapse",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/burst.png",
+                    "name": "burst",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/camera.png",
+                    "name": "cameraIcon",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/battery3.png",
+                    "name": "battery3",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/battery1.png",
+                    "name": "battery1",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/battery0.png",
+                    "memoryFormat": "Smallest",
+                    "name": "battery0",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/battery2.png",
+                    "memoryFormat": "Smallest",
+                    "name": "battery2",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/video.png",
+                    "name": "videoIcon",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "chalk"
+        ],
+        "uuid": "6e6532d8-c923-431f-869f-07646283b399",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.0.0"
+}
